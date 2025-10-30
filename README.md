@@ -113,7 +113,9 @@ public class CountdownTimer : MonoBehaviour
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
-            timerText.text = "Time: " + Mathf.Ceil(timeRemaining).ToString();
+            // Rounds the timeRemaining float up to the nearest whole number.
+            // For example, 14.2 becomes 15. This avoids showing fractions of a second.
+            timerText.text = "Time: " + Mathf.Ceil(timeRemaining).ToString(); 
         }
         else
         {
